@@ -9,10 +9,10 @@
 - **File:** [`Wrangling_Billboard_Top100.ipynb`](./Wrangling_Billboard_Top100.ipynb)
 
 ### 3. Visual Storytelling Part 1: Green Buildings
-- **File:** [`GreenBuildings Visualization.ipynb`](./GreenBuildings_Visualization.ipynb)
+- **File:** [`GreenBuildings Visualization.ipynb`](./GreenBuildings Visualization.ipynb)
 
 ### 4. Visual Storytelling Part 2: Capital Metro Data
-- **File:** [`CapMetro Visualization.ipynb`](./CapMetro_Visualization.ipynb)
+- **File:** [`CapMetro Visualization.ipynb`](./CapMetro Visualization.ipynb)
 
 ### 5. Clustering and Dimensionality Reduction
 - **File:** [`Wine_Clustering_Dimensionality.ipynb`](./Wine_Clustering_Dimensionality.ipynb)
