@@ -3,7 +3,7 @@
 ## Questions and Associated Files
 
 ### 1. Probability Practice
-- **File:** `Probability_Practice.ipynb`
+- **File:** `Probability_Practice.ipynb`(./Probability_Practice.ipynb)
 
 ### 2. Wrangling the Billboard Top 100
 - **File:** `Wrangling_Billboard_Top100.ipynb`
