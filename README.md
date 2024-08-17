@@ -15,7 +15,7 @@
 - **File:** [`CapMetro_Visualization.ipynb`](./CapMetro_Visualization.ipynb)
 
 ### 5. Clustering and Dimensionality Reduction
-- **File:** *[File name needed]*
+- **File:** *['Wine_Clustering_Dimensionality.ipynb'](./Wine_Clustering_Dimensionality.ipynb)
 
 ### 6. Market Segmentation
 - **File:** [`MarketSegmentation_final.ipynb`](./MarketSegmentation_final.ipynb)
