@@ -1,5 +1,5 @@
 # Intro to Machine Learning Part 2 - Homework Take-Home Problems
-
+## Oliver Gault, Kedar Godbole, Luke Leon, Felipe Zapater
 ## Questions and Associated Files
 
 ### 1. Probability Practice
