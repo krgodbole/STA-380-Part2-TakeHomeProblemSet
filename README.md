@@ -1,8 +1,8 @@
 # STA-380-Part2-TakeHomeProblemSet
  Homework Take home problems for Intro to Machine Learning Pt.2
- Question 1) Probability Practice
+ Question 1) Probability Practice\
          File: Probability_Practice.ipynb
- Question 2) Wrangling the Billboard Top 100
+ Question 2) Wrangling the Billboard Top 100\
          File: Wrangling_Billboard_Top100.ipynb
  Question 3) Visual Storytelling Part 1: Green Buildings
          File: GreenBuildings Visualization.ipynb
