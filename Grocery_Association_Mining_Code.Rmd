@@ -1,0 +1,77 @@
+---
+title: STA 380, Part 2: Exercises
+author: Luke Leon
+output: pdf_document
+date: "2024-08-18"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(igraph)
+library(arules)
+library(arulesViz)
+```
+
+# Question 8: Association Rule Mining
+
+I chose conservative measures for support = 0.005 and confidence = 0.1 initially so as not to limit the number of rules. After observing the full list of 1582, I narrowed down to lift > 3 and confidence > 0.1. As you can see by the resulting gephi graph, I felt these parameters result in a happy medium of not too many observations to look at while still capturing important relationships with high lift. 
+
+Root vegetables appear to be the most common item across all baskets. A few notable items that appear in baskets together 
+   - dinner essentials: chicken and vegetables
+   - baking/dairy: eggs, whole milk, butter, margarine, shipped/sour cream
+   - sandwich items 1: ham and white bread
+   - sandwich items 2: rolls/buns, sausage, and sliced cheese
+
+
+```{r}
+setwd("/Users/lukeleon/Downloads")
+grocery_raw <- readLines("/Users/lukeleon/Downloads/groceries.txt")
+
+grocery_df <- data.frame(basket = grocery_raw, stringsAsFactors = FALSE)
+
+head(grocery_df)
+str(grocery_df)
+
+# Split each grocery list into individual items
+grocery_baskets <- strsplit(grocery_df$basket, ",")
+
+# Remove duplicates 
+grocery_baskets <- lapply(grocery_baskets, unique)
+
+# Cast this variable as a special arules "transactions" class.
+grocery_trans <- as(grocery_baskets, "transactions")
+summary(grocery_trans)
+
+# Now run the 'apriori' algorithm
+# Look at rules with support > .005 & confidence >.1 & length (# artists) <= 4
+grocery_rules <- apriori(grocery_trans, 
+                         parameter = list(support = 0.005, confidence = 0.1, maxlen = 4))
+
+# Inspect the rules
+inspect(grocery_rules)
+
+# look at subsets
+inspect(subset(grocery_rules, subset = lift > 3))
+inspect(subset(grocery_rules, subset = confidence > 0.6))
+inspect(subset(grocery_rules, subset = lift > 3.5 & confidence > 0.4))
+
+plot(grocery_rules)
+
+plot(grocery_rules, measure = c("support", "lift"), shading = "confidence")
+
+# Two-key plot
+plot(grocery_rules, method = 'two-key plot')
+
+inspect(subset(grocery_rules, support > 0.05))
+inspect(subset(grocery_rules, confidence > 0.6))
+inspect(subset(grocery_rules, lift > 3))
+
+# Graph-based visualization
+grocery_graph <- associations2igraph(subset(grocery_rules, lift > 3), associationsAsNodes = FALSE)
+igraph::write_graph(grocery_graph, file = 'grocery_rules.graphml', format = "graphml")
+
+```
+
+
+
